@@ -1,0 +1,33 @@
+<div class="container">
+  <h3><i class="bi bi-card-checklist"></i> Add MaxMod</h3>
+  <form (ngSubmit)="submit()" [formGroup]="numberForm" #formDir="ngForm">
+    <div class="mb-3">
+      <label for="numberX" class="form-label">Number X</label>
+      <input type="number" class="form-control" id="numberX" name="numberX" placeholder="enter the number x" formControlName="x" [(ngModel)]="number.x" required>
+      <div *ngIf="numberX.invalid && formDir.submitted" class="text-danger fw-medium fst-italic">
+        <p *ngIf="numberX.errors?.['required']" >|Number X is required</p>
+        <p *ngIf="numberX.errors?.['min']">Value cannot be null</p>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="numberY" class="form-label">Number Y</label>
+      <input type="number" class="form-control" id="numberY" name="numberY" placeholder="enter the number y" formControlName="y" [(ngModel)]="number.y" required>
+      <div *ngIf="numberY.invalid && formDir.submitted" class="text-danger fw-medium fst-italic">
+        <p *ngIf="numberY.errors?.['required']">|Number Y is required</p>
+        <p *ngIf="numberY.errors?.['min']">|Value cannot be null</p>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="numberN" class="form-label">Number N</label>
+      <input type="number" class="form-control" id="numberN" name="numberN" placeholder="enter the number n" formControlName="n" [(ngModel)]="number.n" required>
+      <div *ngIf="numberN.invalid && formDir.submitted" class="text-danger fw-medium fst-italic">
+        <p *ngIf="numberN.errors?.['required']">|Number N is required</p>
+        <p *ngIf="numberN.errors?.['min']">|Value cannot be null</p>
+      </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button (click)="addNumber()" class="btn btn-primary" type="submit">Save</button>
+      <button (click)="cancel()" class="btn btn-danger" type="submit" routerLink="/list-number">Cancel</button>
+    </div>
+  </form>
+</div>

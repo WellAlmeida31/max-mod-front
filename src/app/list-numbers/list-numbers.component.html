@@ -1,0 +1,26 @@
+<div class="container">
+  <h3><i class="bi bi-card-checklist"></i>List of MaxMod</h3>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-primary me-md-2" type="button" routerLink="/add-number">Add MaxMod</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">X</th>
+        <th scope="col">Y</th>
+        <th scope="col">N</th>
+        <th scope="col">K</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let number of listNumbers">
+        <td scope="row"><i class="bi bi-caret-right"></i></td>
+        <td>{{ number.x }}</td>
+        <td>{{ number.y }}</td>
+        <td>{{ number.n }}</td>
+        <td>{{ number.k }}</td>
+      </tr>
+    </tbody>
+    </table>
+</div>
